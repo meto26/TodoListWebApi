@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>TodoApi</name>
+    </assembly>
+    <members>
+        <member name="T:TodoApi.Controllers.TodoItemsController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:TodoApi.Controllers.TodoItemsController.GetTodoItems">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:TodoApi.Controllers.TodoItemsController.GetTodoItem(System.Int64)">
+            <summary>
+            
+            </summary>
+            <param name="id">Todo id</param>
+            <returns></returns>
+        </member>
+        <member name="P:TodoApi.Models.TodoItem.Id">
+            <summary>
+            İtem id
+            </summary>
+        </member>
+        <member name="P:TodoApi.Models.TodoItem.Name">
+            <summary>
+            İtem name
+            </summary>
+        </member>
+        <member name="P:TodoApi.Models.TodoItem.IsComplete">
+            <summary>
+            İtem iscompleted or not
+            </summary>
+        </member>
+        <member name="P:TodoApi.Models.TodoItem.Time">
+            <summary>
+            İtem time
+            </summary>
+        </member>
+    </members>
+</doc>

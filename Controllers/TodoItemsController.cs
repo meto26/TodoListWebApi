@@ -35,7 +35,7 @@ namespace TodoApi.Controllers
         }
 
         /// <summary>
-        /// 
+        /// Veri alma işlemi
         /// </summary>
         /// <param name="id">Todo id</param>
         /// <returns></returns>
@@ -50,7 +50,13 @@ namespace TodoApi.Controllers
             }
 
             return todoItem;
-        }        
+        }
+        /// <summary>
+        /// Güncelleme işlemi
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="todoItem"></param>
+        /// <returns></returns>
         [HttpPut("{id}")]
         public async Task<IActionResult> PutTodoItem(long id, TodoItem todoItem)
         {
@@ -78,7 +84,12 @@ namespace TodoApi.Controllers
             }
 
             return NoContent();
-        }        
+        }
+        /// <summary>
+        /// Veri ekleme işlemi
+        /// </summary>
+        /// <param name="todoItem"></param>
+        /// <returns></returns>
         [HttpPost]
         public async Task<ActionResult<TodoItem>> PostTodoItem(TodoItem todoItem)
         {
@@ -88,8 +99,12 @@ namespace TodoApi.Controllers
             return CreatedAtAction(nameof(GetTodoItem), new { id = todoItem.Id }, todoItem);
     
         }
-
-        //Silme
+        /// <summary>
+        /// Silme işlemi
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        //
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteTodoItem(long id)
         {

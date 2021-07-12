@@ -17,9 +17,31 @@
         </member>
         <member name="M:TodoApi.Controllers.TodoItemsController.GetTodoItem(System.Int64)">
             <summary>
-            
+            Veri alma işlemi
             </summary>
             <param name="id">Todo id</param>
+            <returns></returns>
+        </member>
+        <member name="M:TodoApi.Controllers.TodoItemsController.PutTodoItem(System.Int64,TodoApi.Models.TodoItem)">
+            <summary>
+            Güncelleme işlemi
+            </summary>
+            <param name="id"></param>
+            <param name="todoItem"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TodoApi.Controllers.TodoItemsController.PostTodoItem(TodoApi.Models.TodoItem)">
+            <summary>
+            Veri ekleme işlemi
+            </summary>
+            <param name="todoItem"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TodoApi.Controllers.TodoItemsController.DeleteTodoItem(System.Int64)">
+            <summary>
+            Silme işlemi
+            </summary>
+            <param name="id"></param>
             <returns></returns>
         </member>
         <member name="P:TodoApi.Models.TodoItem.Id">

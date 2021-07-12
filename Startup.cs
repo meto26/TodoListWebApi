@@ -29,6 +29,10 @@ namespace TodoApi
             services.AddDbContext<TodoContext>(options => 
                         options.UseNpgsql(Configuration.GetConnectionString("TodoContext")));
             services.AddControllers();
+
+            services.AddCors();
+           
+               
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo
@@ -67,6 +71,12 @@ namespace TodoApi
 
             app.UseHttpsRedirection();
             app.UseRouting();
+
+            app.UseCors(options => {
+                options.AllowAnyOrigin()
+                .AllowAnyMethod()
+                .AllowAnyHeader();
+            });
 
             app.UseSwagger();
 

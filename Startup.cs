@@ -28,7 +28,9 @@ namespace TodoApi
 
             services.AddDbContext<TodoContext>(options => 
                         options.UseNpgsql(Configuration.GetConnectionString("TodoContext")));
-            services.AddControllers();
+
+            
+            services.AddControllers().AddNewtonsoftJson();
 
             services.AddCors();
            

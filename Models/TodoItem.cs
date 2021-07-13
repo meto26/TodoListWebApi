@@ -1,4 +1,6 @@
+using Newtonsoft.Json;
 using System;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace TodoApi.Models
 {
@@ -7,6 +9,8 @@ namespace TodoApi.Models
         /// <summary>
         /// Ýtem id
         /// </summary>
+        [JsonIgnore]
+        [System.Text.Json.Serialization.JsonIgnore]
         public long Id { get; set; }
         /// <summary>
         /// Ýtem name
@@ -15,11 +19,16 @@ namespace TodoApi.Models
         /// <summary>
         /// Ýtem iscompleted or not
         /// </summary>
-        public bool IsComplete{get;set; }
+        public bool IsComplete{ get; set; }
         /// <summary>
         /// Ýtem time
         /// </summary>
-        public DateTime Time { get; set; }
+        [JsonIgnore]
+        [System.Text.Json.Serialization.JsonIgnore]
+        public DateTime Time { get; set; } = DateTime.Now;
+        [ForeignKey("Category")]
+        public int CategoryId { get; set; }
+        public Category Category { get; set; }
         
     }
 }

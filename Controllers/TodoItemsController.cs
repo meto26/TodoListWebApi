@@ -37,12 +37,12 @@ namespace TodoApi.Controllers
         /// <summary>
         /// Veri alma işlemi
         /// </summary>
-        /// <param name="id">Todo id</param>
+        /// <param name="id">Category Id Sorgulama</param>
         /// <returns></returns>
         [HttpGet("{id}")]
-        public async Task<ActionResult<TodoItem>> GetTodoItem(long id)
+        public async Task<ActionResult<List<TodoItem>>> GetTodoItem(int id)
         {
-            var todoItem = await _context.TodoItems.FindAsync(id);
+            var todoItem = await _context.TodoItems.Where(x=>x.CategoryId == id).ToListAsync();
 
             if (todoItem == null)
             {
@@ -66,7 +66,7 @@ namespace TodoApi.Controllers
             }
 
             _context.Entry(todoItem).State = EntityState.Modified;
-
+            
             try
             {
                 await _context.SaveChangesAsync();

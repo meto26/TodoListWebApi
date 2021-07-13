@@ -11,7 +11,10 @@ namespace ToDoApi.Data
     {
 
     }    
-    public DbSet<TodoItem> TodoItems{get;set;}
+    public DbSet<TodoItem> TodoItems{ get; set; }
+        public DbSet<Category> Categories { get; set; }
     }
+
+       
     
-}
+   }
